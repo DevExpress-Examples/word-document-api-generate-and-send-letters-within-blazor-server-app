@@ -4,7 +4,7 @@
   </PropertyGroup>
   <ItemGroup>
     <PackageReference Include="DevExpress.Blazor" Version="20.1.6" />
-    <PackageReference Include="DevExpress.Document.Processor" Version="20.1.9" />
+    <PackageReference Include="DevExpress.Document.Processor" Version="20.1.10" />
     <PackageReference Include="MailKit" Version="2.9.0" />
   </ItemGroup>
   <ItemGroup>
