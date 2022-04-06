@@ -82,7 +82,7 @@
         return base.OnInitializedAsync();
     }
     
-    #region CreateAttachment
+    <!--#region CreateAttachment-->
     MemoryStream CreateAttachment(Recipient recipient) {
         ArgumentNullException.ThrowIfNull(SelectedSender);
 
@@ -101,7 +101,7 @@
             return stream;
         }
     }
-    #endregion
+    <!--#endregion CreateAttachment-->
 
     void DownloadPdf(Recipient recipient) {
         // Execute mail merge.
@@ -112,8 +112,8 @@
                 Convert.ToBase64String(stream.ToArray()));
         }
     }
-
-    #region SendMessages
+    
+    <!--#region SendMessages-->
     void SendEmails(MouseEventArgs mouseEventArgs) {
         // Obtain a list of recipients.
         List<Recipient> recipientList = dataSource.RecipientList;
@@ -182,5 +182,5 @@
             }
         }
     }
-    #endregion
+    <!--#endregion SendMessages-->
 }
