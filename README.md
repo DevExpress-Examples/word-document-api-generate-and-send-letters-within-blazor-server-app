@@ -3,7 +3,7 @@
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T937121)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 <!-- default badges end -->
-# Word Processing Document API – How to Generate and Send Business Letters within a Blazor Server App
+# Word Processing Document API – How to Generate and Send Business Letters within a .NET 6 Blazor Server App
 
 This Blazor Server application uses the [Word Processing Document API](https://www.devexpress.com/products/net/office-file-api/word/) to generate multiple business letters based on a template. Users can download these letters in PDF format or send them via e-mail.
 
