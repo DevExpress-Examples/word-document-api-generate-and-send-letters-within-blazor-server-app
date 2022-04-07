@@ -17,6 +17,10 @@ To run the application, you need to install or restore the following NuGet packa
 
 * [MailKit](https://www.nuget.org/packages/MailKit/) - An open source .NET library used to send e-mail messages.
 
+## Documentation
+
+Refer to this help topic for implementation details: [Use the Word Document API to Generate and Send Business Letters within a Blazor Server App](https://docs.devexpress.com/OfficeFileAPI/403819/dotnet-core-support/use-word-document-api-within-a-blazor-server-app).
+
 ## Files to Look At
 
 * [SampleData.cs](./CS/BlazorApp_WordDocumentAPI/Data/SampleData.cs)
@@ -25,5 +29,5 @@ To run the application, you need to install or restore the following NuGet packa
 
 ## More Examples
 
-- [Spreadsheet Document API - How to Create a Loan Amortization Schedule within a Blazor Server App](https://github.com/DevExpress-Examples/spreadsheet-document-api-create-loan-amortization-schedule-within-blazor-server-app)
-- [How to Dockerize an Office File API Application](https://github.com/DevExpress-Examples/dockerize-office-file-api-app)
+* [Spreadsheet Document API - How to Create a Loan Amortization Schedule within a Blazor Server App](https://github.com/DevExpress-Examples/spreadsheet-document-api-create-loan-amortization-schedule-within-blazor-server-app)
+* [How to Dockerize an Office File API Application](https://github.com/DevExpress-Examples/dockerize-office-file-api-app)
