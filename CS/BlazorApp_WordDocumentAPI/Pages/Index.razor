@@ -38,28 +38,26 @@
                 </DxFormLayoutItem>
             </DxFormLayout>
             <div class="col">
-                <DxDataGrid Data="@dataSource.RecipientList"
-                            SelectionMode="DataGridSelectionMode.None"
-                            CssClass="mt-3"
-                            ShowPager="false">
-                    <DxDataGridColumn Field="@nameof(Recipient.ContactName)"
-                                      Caption="Recipient" />
-                    <DxDataGridColumn Field="@nameof(Recipient.Email)"
-                                      Caption="Email" />
-                    <DxDataGridColumn Caption="Attachment"
-                                      Width="150px">
-                        <DisplayTemplate>
-                            @{
-                                var recipient = context as Recipient;
-                                @if (recipient != null) {
-                                    <DxButton Text="Download"
-                                              CssClass="btn-block" 
-                                              Click="@((MouseEventArgs args) => DownloadPdf(recipient))"/>
+<DxGrid Data="@dataSource.RecipientList"
+            CssClass="mt-3" PagerVisible="false">
+<Columns>
+<DxGridDataColumn FieldName="@nameof(Recipient.ContactName)" Caption="Recipient" />
+<DxGridDataColumn FieldName="@nameof(Recipient.Email)" Caption="Email" />
+<DxGridDataColumn Caption="Attachment" Width="150px">
+<CellDisplayTemplate>
+                                @{
+                                    var recipient = context.DataItem as Recipient;
+                                    @if (recipient != null)
+                                    {
+        <DxButton Text="Download"
+                                          CssClass="btn-block"
+                                          Click="@((MouseEventArgs args) => DownloadPdf(recipient))" />
+                                    }
                                 }
-                            }
-                        </DisplayTemplate>
-                    </DxDataGridColumn>
-                </DxDataGrid>
+</CellDisplayTemplate>
+</DxGridDataColumn>
+</Columns>  
+</DxGrid>
             </div>
         </div>
     </div>
