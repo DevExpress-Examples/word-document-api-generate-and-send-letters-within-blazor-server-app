@@ -10,6 +10,9 @@ This Blazor Server application uses the [Word Processing Document API](https://w
 
 ![Word Processing - Final App](./images/word-processing-blazor-final-app.png)
 
+> [!Important]  
+> The Universal Subscription or an additional Office File API Subscription is required to use this example in production code. For pricing information, please refer to the [DevExpress Subscription](https://www.devexpress.com/Subscriptions/) page. 
+
 To run the application, you need to install or restore the following NuGet packages:
 
 * [DevExpress.Document.Processor](https://nuget.devexpress.com/packages/DevExpress.Document.Processor/) - Contains the [DevExpress Office File API](https://www.devexpress.com/products/net/office-file-api/) libraries.
