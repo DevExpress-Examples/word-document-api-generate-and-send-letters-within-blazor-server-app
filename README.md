@@ -10,11 +10,13 @@ This Blazor Server application uses the [Word Processing Document API](https://w
 
 ![Word Processing - Final App](./images/word-processing-blazor-final-app.png)
 
-To run the application, you need to install or restore the following NuGet packages:
+To run the application, install or restore the following NuGet packages:
 
 * [DevExpress.Document.Processor](https://nuget.devexpress.com/packages/DevExpress.Document.Processor/) - Contains the [DevExpress Office File API](https://www.devexpress.com/products/net/office-file-api/) libraries.
 
 * [DevExpress.Blazor](https://nuget.devexpress.com/packages/DevExpress.Blazor/) - Contains all [DevExpress Blazor UI components](https://www.devexpress.com/blazor/).
+
+* [DevExpress.Drawing.Skia](https://nuget.devexpress.com/packages/DevExpress.Drawing.Skia/) - Contains the cross-platform drawing functionality based on the Skia Graphics Library.
 
 * [MailKit](https://www.nuget.org/packages/MailKit/) - An open source .NET library used to send e-mail messages.
 
@@ -24,9 +26,9 @@ Refer to this help topic for implementation details: [Use the Word Document API 
 
 ## Files to Look At
 
-* [SampleData.cs](./CS/BlazorApp_WordDocumentAPI/Data/SampleData.cs)
+* [SampleData.cs](./CS/BlazorAppWordProcessing/Data/SampleData.cs)
 
-* [Index.razor](./CS/BlazorApp_WordDocumentAPI/Pages/Index.razor)
+* [Home.razor](`/CS/BlazorAppWordProcessing/Components/Pages/Home.razor)
 
 ## More Examples
 
