@@ -1,5 +1,4 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/301388415/24.2.3%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T937121)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
@@ -13,11 +12,13 @@ This Blazor Server application uses the [Word Processing Document API](https://w
 > [!Important]  
 > The Universal Subscription or an additional Office File API Subscription is required to use this example in production code. For pricing information, please refer to the [DevExpress Subscription](https://www.devexpress.com/Subscriptions/) page. 
 
-To run the application, you need to install or restore the following NuGet packages:
+To run the application, install or restore the following NuGet packages:
 
 * [DevExpress.Document.Processor](https://nuget.devexpress.com/packages/DevExpress.Document.Processor/) - Contains the [DevExpress Office File API](https://www.devexpress.com/products/net/office-file-api/) libraries.
 
 * [DevExpress.Blazor](https://nuget.devexpress.com/packages/DevExpress.Blazor/) - Contains all [DevExpress Blazor UI components](https://www.devexpress.com/blazor/).
+
+* [DevExpress.Drawing.Skia](https://nuget.devexpress.com/packages/DevExpress.Drawing.Skia/) - Contains the cross-platform drawing functionality based on the Skia Graphics Library.
 
 * [MailKit](https://www.nuget.org/packages/MailKit/) - An open source .NET library used to send e-mail messages.
 
@@ -27,9 +28,9 @@ Refer to this help topic for implementation details: [Use the Word Document API 
 
 ## Files to Look At
 
-* [SampleData.cs](./CS/BlazorApp_WordDocumentAPI/Data/SampleData.cs)
+* [SampleData.cs](./CS/BlazorAppWordProcessing/Data/SampleData.cs)
 
-* [Index.razor](./CS/BlazorApp_WordDocumentAPI/Pages/Index.razor)
+* [Home.razor](`/CS/BlazorAppWordProcessing/Components/Pages/Home.razor)
 
 ## More Examples
 

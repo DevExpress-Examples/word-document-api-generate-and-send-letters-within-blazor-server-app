@@ -1,11 +1,11 @@
 ﻿@page "/"
+@rendermode InteractiveServer
 @inject IJSRuntime JS
-@using System.IO
-@using DevExpress.XtraRichEdit
 @using MimeKit;
 @using MailKit.Net.Smtp
 @using Microsoft.Extensions.Logging
 @inject ILogger<Index> logger
+
 <div class="container">
     <div class="card mt-3">
         <div class="card-header">
@@ -16,7 +16,7 @@
                 <DxFormLayoutItem ColSpanMd="12">
                     <Template>
                         <p>
-                            This example uses the 
+                            This example uses the
                             <a href="https://www.devexpress.com/products/net/office-file-api/word/">Word Processing Document API</a>
                             to generate personalized letters based on a template. Select a sender and click <b>Send emails</b> to send
                             letters to all recipients. Click <b>Download</b> to download a letter in PDF format for a specific recipient.
@@ -38,26 +38,26 @@
                 </DxFormLayoutItem>
             </DxFormLayout>
             <div class="col">
-<DxGrid Data="@dataSource.RecipientList"
-            CssClass="mt-3" PagerVisible="false">
-<Columns>
-<DxGridDataColumn FieldName="@nameof(Recipient.ContactName)" Caption="Recipient" />
-<DxGridDataColumn FieldName="@nameof(Recipient.Email)" Caption="Email" />
-<DxGridDataColumn Caption="Attachment" Width="150px">
-<CellDisplayTemplate>
+                <DxGrid Data="@dataSource.RecipientList"
+                        CssClass="mt-3" PagerVisible="false">
+                    <Columns>
+                        <DxGridDataColumn FieldName="@nameof(Recipient.ContactName)" Caption="Recipient" />
+                        <DxGridDataColumn FieldName="@nameof(Recipient.Email)" Caption="Email" />
+                        <DxGridDataColumn Caption="Attachment" Width="150px">
+                            <CellDisplayTemplate>
                                 @{
                                     var recipient = context.DataItem as Recipient;
                                     @if (recipient != null)
                                     {
-        <DxButton Text="Download"
-                                          CssClass="btn-block"
-                                          Click="@((MouseEventArgs args) => DownloadPdf(recipient))" />
+                                        <DxButton Text="Download"
+                                                  CssClass="btn-block"
+                                                  Click="@((MouseEventArgs args) => DownloadPdf(recipient))" />
                                     }
                                 }
-</CellDisplayTemplate>
-</DxGridDataColumn>
-</Columns>  
-</DxGrid>
+                            </CellDisplayTemplate>
+                        </DxGridDataColumn>
+                    </Columns>
+                </DxGrid>
             </div>
         </div>
     </div>
@@ -68,20 +68,26 @@
     SampleData dataSource = new();
     Sender? selectedSender;
 
-    Sender? SelectedSender {
+    Sender? SelectedSender
+    {
         get => selectedSender;
-        set { selectedSender = value;
-            InvokeAsync(StateHasChanged); }
+        set
+        {
+            selectedSender = value;
+            InvokeAsync(StateHasChanged);
+        }
     }
 
-    protected override Task OnInitializedAsync() {
+    protected override Task OnInitializedAsync()
+    {
         selectedSender = dataSource.SenderList[0];
         documentServer.LoadDocument("Data/MailMerge.rtf", DocumentFormat.Rtf);
         return base.OnInitializedAsync();
     }
-    
+
     <!--#region CreateAttachment-->
-    MemoryStream CreateAttachment(Recipient recipient) {
+    MemoryStream CreateAttachment(Recipient recipient)
+    {
         ArgumentNullException.ThrowIfNull(SelectedSender);
 
         using (var resultDocumentServer = new RichEditDocumentServer())
@@ -100,8 +106,8 @@
         }
     }
     <!--#endregion CreateAttachment-->
-
-    void DownloadPdf(Recipient recipient) {
+    void DownloadPdf(Recipient recipient)
+    {
         // Execute mail merge.
         using (MemoryStream stream = CreateAttachment(recipient))
         {
@@ -110,15 +116,18 @@
                 Convert.ToBase64String(stream.ToArray()));
         }
     }
-    
+
     <!--#region SendMessages-->
-    void SendEmails(MouseEventArgs mouseEventArgs) {
+    void SendEmails(MouseEventArgs mouseEventArgs)
+    {
         // Obtain a list of recipients.
         List<Recipient> recipientList = dataSource.RecipientList;
 
-        for (int i = 0; i < recipientList.Count; i++) {
+        for (int i = 0; i < recipientList.Count; i++)
+        {
             // Execute mail merge to generate a letter for each recipient.
-            using (MemoryStream attachmentStream = CreateAttachment(recipientList[i])) {
+            using (MemoryStream attachmentStream = CreateAttachment(recipientList[i]))
+            {
                 // Create e-mail message for each recipient.
                 // Attach letter to the message as a PDF file.
                 MimeMessage message = CreateMessage("YOUR_EMAIL_ADDRESS",
@@ -129,7 +138,8 @@
         }
     }
 
-    MimeMessage CreateMessage(string from, Recipient recipient, MemoryStream attachmentStream) {
+    MimeMessage CreateMessage(string from, Recipient recipient, MemoryStream attachmentStream)
+    {
         var message = new MimeMessage();
         // Specify the sender's address.
         message.From.Add(new MailboxAddress(SelectedSender?.FullName, from));
@@ -138,17 +148,19 @@
         message.Subject = "Your message subject";
 
         // Create the body of your message.
-        var body = new TextPart() {
+        var body = new TextPart()
+            {
                 Text = "Your message text"
-        };
+            };
 
         // Create a PDF attachment to send the generated letter.
-        var attachment = new MimePart("application", "pdf") {
+        var attachment = new MimePart("application", "pdf")
+            {
                 Content = new MimeContent(attachmentStream, ContentEncoding.Default),
                 ContentDisposition = new ContentDisposition(ContentDisposition.Attachment),
                 ContentTransferEncoding = ContentEncoding.Base64,
                 FileName = "attachment.pdf"
-        };
+            };
 
         var multipart = new Multipart("mixed");
         multipart.Add(body);
@@ -159,8 +171,10 @@
         return message;
     }
 
-    void SendMessage(MimeMessage message) {
-        using (var client = new SmtpClient()) {
+    void SendMessage(MimeMessage message)
+    {
+        using (var client = new SmtpClient())
+        {
             // Connect to your SMTP server to send the message.
             // Use one of these ports: 25, 465, 587, or 2525.
             client.Connect("MAIL_SERVER", 587, false);
@@ -168,14 +182,17 @@
             // Use the code below if your SMTP server requires authentication.
             client.Authenticate("USERNAME", "PASSWORD");
 
-            try {
+            try
+            {
                 // Send the message.
                 client.Send(message);
             }
-            catch(Exception ex) {
+            catch (Exception ex)
+            {
                 logger.LogError(ex.Message);
             }
-            finally {
+            finally
+            {
                 client.Disconnect(true);
             }
         }
