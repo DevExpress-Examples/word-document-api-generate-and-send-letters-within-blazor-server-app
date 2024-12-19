@@ -21,7 +21,7 @@ To run the application, install or restore the following NuGet packages:
 
 * [DevExpress.Drawing.Skia](https://nuget.devexpress.com/packages/DevExpress.Drawing.Skia/) - Contains the cross-platform drawing functionality based on the Skia Graphics Library.
 
-* [MailKit](https://www.nuget.org/packages/MailKit/) - An open source .NET library used to send e-mail messages.
+* [MailKit](https://www.nuget.org/packages/MailKit/) - An open-source .NET library that sends e-mail messages.
 
 ## Documentation
 
@@ -31,7 +31,7 @@ Refer to this help topic for implementation details: [Use the Word Document API 
 
 * [SampleData.cs](./CS/BlazorAppWordProcessing/Data/SampleData.cs)
 
-* [Home.razor](`/CS/BlazorAppWordProcessing/Components/Pages/Home.razor)
+* [Home.razor](./CS/BlazorAppWordProcessing/Components/Pages/Home.razor)
 
 ## More Examples
 
