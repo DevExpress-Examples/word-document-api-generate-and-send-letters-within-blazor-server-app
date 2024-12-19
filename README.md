@@ -1,5 +1,4 @@
 <!-- default badges list -->
-![](https://img.shields.io/endpoint?url=https://codecentral.devexpress.com/api/v1/VersionRange/301388415/24.2.3%2B)
 [![](https://img.shields.io/badge/Open_in_DevExpress_Support_Center-FF7200?style=flat-square&logo=DevExpress&logoColor=white)](https://supportcenter.devexpress.com/ticket/details/T937121)
 [![](https://img.shields.io/badge/📖_How_to_use_DevExpress_Examples-e9f6fc?style=flat-square)](https://docs.devexpress.com/GeneralInformation/403183)
 [![](https://img.shields.io/badge/💬_Leave_Feedback-feecdd?style=flat-square)](#does-this-example-address-your-development-requirementsobjectives)
@@ -21,7 +20,7 @@ To run the application, install or restore the following NuGet packages:
 
 * [DevExpress.Drawing.Skia](https://nuget.devexpress.com/packages/DevExpress.Drawing.Skia/) - Contains the cross-platform drawing functionality based on the Skia Graphics Library.
 
-* [MailKit](https://www.nuget.org/packages/MailKit/) - An open source .NET library used to send e-mail messages.
+* [MailKit](https://www.nuget.org/packages/MailKit/) - An open-source .NET library that sends e-mail messages.
 
 ## Documentation
 
@@ -31,7 +30,7 @@ Refer to this help topic for implementation details: [Use the Word Document API 
 
 * [SampleData.cs](./CS/BlazorAppWordProcessing/Data/SampleData.cs)
 
-* [Home.razor](`/CS/BlazorAppWordProcessing/Components/Pages/Home.razor)
+* [Home.razor](./CS/BlazorAppWordProcessing/Components/Pages/Home.razor)
 
 ## More Examples
 
