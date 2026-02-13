@@ -38,7 +38,7 @@ Refer to this help topic for implementation details: [Use the Word Document API 
 * [Spreadsheet Document API - How to Create a Loan Amortization Schedule within a Blazor Server App](https://github.com/DevExpress-Examples/spreadsheet-document-api-create-loan-amortization-schedule-within-blazor-server-app)
 * [How to Dockerize an Office File API Application](https://github.com/DevExpress-Examples/dockerize-office-file-api-app)
 <!-- feedback -->
-## Does this example address your development requirements/objectives?
+## Does This Example Address Your Development Requirements/Objectives?
 
 [<img src="https://www.devexpress.com/support/examples/i/yes-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=word-document-api-generate-and-send-letters-within-blazor-server-app&~~~was_helpful=yes) [<img src="https://www.devexpress.com/support/examples/i/no-button.svg"/>](https://www.devexpress.com/support/examples/survey.xml?utm_source=github&utm_campaign=word-document-api-generate-and-send-letters-within-blazor-server-app&~~~was_helpful=no)
 
